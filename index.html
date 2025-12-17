@@ -5169,7 +5169,7 @@
             function (e) {
               e.preventDefault();
               e.stopPropagation();
-
+              
               customSubmit();
             },
             true
@@ -5180,16 +5180,25 @@
           emailjs.sendForm("service_jj1me45", "template_34y0gih", form).then(
             () => {
               console.log("SUCCESS!");
+              form.reset();
+              showThankYouPopup();
             },
             (error) => {
               console.log("FAILED...", error);
+              form.reset();
+              showThankYouPopup();
             }
           );
+        }
+
+        function showThankYouPopup() {
+          alert("Xin cảm ơn ❤️!");
         }
       });
     </script>
   </body>
 </html>
+
 
 
 
